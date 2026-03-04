@@ -3,12 +3,14 @@ import '../models/recipe.dart';
 
 
 // In DetailsScreen (StatefulWidget)
-IconButton(
-  icon: Icon(
-    recipe.isFavorite ? Icons.favorite : Icons.favorite_border,
-    color: Colors.red,
-  ),
-  onPressed: () => setState(() {
-    recipe.isFavorite = !recipe.isFavorite;
-  }),
-)
+Widget buildFavoriteButton(Recipe recipe, Function setState) {
+  return IconButton(
+    icon: Icon(
+      recipe.isFavorite ? Icons.favorite : Icons.favorite_border,
+      color: Colors.red,
+    ),
+    onPressed: () => setState(() {
+      recipe.isFavorite = !recipe.isFavorite;
+    }),
+  );
+}
